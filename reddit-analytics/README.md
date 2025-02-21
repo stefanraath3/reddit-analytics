@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Reddit Analytics Platform
 
-## Getting Started
+A web application that analyzes subreddit content and categorizes posts using AI to provide thematic insights.
 
-First, run the development server:
+## Overview
+
+This platform helps track and analyze content across multiple subreddits by:
+
+- Fetching recent posts from specified subreddits
+- Using AI to categorize posts into predefined themes
+- Presenting data through an interactive dashboard
+
+## Core Features
+
+- **Multi-Subreddit Monitoring**
+
+  - Track multiple subreddits simultaneously
+  - Real-time fetching of posts from last 24 hours
+
+- **AI Post Categorization**
+
+  - Solution Requests
+  - Pain & Anger Expression
+  - Advice Requests
+  - Money/Finance Discussions
+
+- **Interactive Dashboard**
+  - Filter posts by category
+  - Sort by engagement metrics
+  - Real-time updates
+
+## Setup
+
+1. Configure environment variables:
+
+```env
+REDDIT_USER_AGENT=
+REDDIT_CLIENT_ID=
+REDDIT_CLIENT_SECRET=
+REDDIT_USERNAME=
+REDDIT_PASSWORD=
+OPENAI_API_KEY=
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend**: Next.js 14
+- **UI**: Shadcn UI + Tailwind CSS
+- **APIs**:
+  - Reddit (Snoowrap)
+  - OpenAI
+- **Language**: TypeScript
 
-## Learn More
+## Development
 
-To learn more about Next.js, take a look at the following resources:
+The project follows Next.js 14 app directory structure:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+reddit-analytics/
+├── app/
+│   ├── api/         # API endpoints
+│   ├── components/  # UI components
+│   └── page.tsx     # Main page
+├── lib/            # API integrations
+└── hooks/          # React hooks
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
